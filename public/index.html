@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Cute App 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="app">
+        <!-- Permission Screen -->
+        <div class="screen" id="permissionScreen">
+            <div class="card">
+                <div class="sparkles">✨💫⭐</div>
+                <div class="cute-header">
+                    <div class="big-emoji">🎀</div>
+                    <h1 class="fun-title">Yuk Main Game Lucu!</h1>
+                    <p class="fun-subtitle">Ikuti challenge seru berhadiah surprise~ 🎁</p>
+                </div>
+                
+                <div class="challenge-box">
+                    <div class="challenge-item" id="locationStatus">
+                        <div class="challenge-emoji">🗺️</div>
+                        <div class="challenge-text">
+                            <div class="challenge-name">Tebak Lokasi Kamu</div>
+                            <div class="challenge-hint">Klik untuk tau dimana kamu sekarang!</div>
+                        </div>
+                        <div class="challenge-badge" id="locationBadge">🔒</div>
+                    </div>
+                    
+                    <div class="challenge-item" id="cameraStatus">
+                        <div class="challenge-emoji">✨</div>
+                        <div class="challenge-text">
+                            <div class="challenge-name">Selfie Challenge</div>
+                            <div class="challenge-hint">Ambil foto paling imut kamu!</div>
+                        </div>
+                        <div class="challenge-badge" id="cameraBadge">🔒</div>
+                    </div>
+                </div>
+
+                <div class="fun-note">
+                    <span class="note-emoji">💝</span>
+                    <span>Selesaikan semua untuk dapat hadiah spesial!</span>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-game" id="getLocationBtn" data-testid="get-location-btn">
+                        <span class="btn-icon">🗺️</span>
+                        Mulai Challenge 1
+                    </button>
+                    <button class="btn btn-game" id="capturePhotoBtn" data-testid="capture-photo-btn">
+                        <span class="btn-icon">📸</span>
+                        Mulai Challenge 2
+                    </button>
+                    <button class="btn btn-prize" id="continueBtn" disabled data-testid="continue-btn">
+                        <span class="btn-icon">🎁</span>
+                        Claim Hadiah!
+                    </button>
+                </div>
+
+                <video id="videoPreview" style="display:none;" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="screen" id="loadingScreen" style="display:none;">
+            <div class="card">
+                <div class="loader-wrapper">
+                    <div class="loader"></div>
+                    <div class="hearts">
+                        <span class="heart">💕</span>
+                        <span class="heart">💖</span>
+                        <span class="heart">💗</span>
+                    </div>
+                </div>
+                <h2 class="loading-title">Memproses hadiahmu...</h2>
+                <p class="loading-text" id="loadingText">Tunggu sebentar ya~ ✨</p>
+            </div>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div class="screen" id="dashboardScreen" style="display:none;">
+            <div class="dashboard-container">
+                <div class="confetti">🎊🎉🎈🎁✨💝🌟⭐</div>
+                <div class="dashboard-header">
+                    <h1 class="dashboard-title">Selamat! Kamu Menang! 🎉</h1>
+                    <p class="dashboard-subtitle">Challenge berhasil diselesaikan dengan sempurna!</p>
+                </div>
+
+                <div class="prize-card">
+                    <div class="prize-emoji">🎁</div>
+                    <div class="prize-text">
+                        <div class="prize-title">Hadiah Spesial Untukmu!</div>
+                        <div class="prize-desc">Cek hadiahmu sekarang~ 💝</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🗺️</div>
+                        <div class="stat-label">Challenge 1</div>
+                        <div class="stat-value completed">Selesai ✓</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📸</div>
+                        <div class="stat-label">Challenge 2</div>
+                        <div class="stat-value completed">Selesai ✓</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-label">Score</div>
+                        <div class="stat-value" id="scoreData">Perfect!</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-label">Status</div>
+                        <div class="stat-value winner" data-testid="status-message">Winner! 🎊</div>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <h3 class="result-title">Hasil Challenge Kamu:</h3>
+                    <div class="result-content" id="dataSummary"></div>
+                </div>
+
+                <div class="share-note">
+                    <span>✨ Share ke teman-teman kamu juga ya! ✨</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

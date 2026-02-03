@@ -1,0 +1,24 @@
+{
+  "name": "pink-cute-app",
+  "version": "1.0.0",
+  "description": "Pink cute static web app with location and camera access",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build needed for static site'"
+  },
+  "keywords": [
+    "netlify",
+    "static",
+    "pink",
+    "cute"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
