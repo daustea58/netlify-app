@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Pink cute static web app with location and camera access",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "netlify dev",
     "build": "echo 'No build needed for static site'"
